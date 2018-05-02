@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Java学习之数组 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="Java学习之数组数组是一个变量，存储相同数据类型的一组数据 数组基本要素标识符：数组的名称，用于区分不同的数组 数组长度属性：length 元素下标：对数组元素进行编号，从0开始，数组中的每个元素都可以通过下标来访问 数组长度固定不变，避免数组越界 数组的声明、分配空间、赋值 声明数组：告诉计算机数据类型是什么  12345int[ ] score1;             //Java成绩i">
+<meta name="keywords" content="Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习之数组 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2017/12/12/Java学习之数组/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="Java学习之数组数组是一个变量，存储相同数据类型的一组数据 数组基本要素标识符：数组的名称，用于区分不同的数组 数组长度属性：length 元素下标：对数组元素进行编号，从0开始，数组中的每个元素都可以通过下标来访问 数组长度固定不变，避免数组越界 数组的声明、分配空间、赋值 声明数组：告诉计算机数据类型是什么  12345int[ ] score1;             //Java成绩i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-02T15:18:54.186Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习之数组 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="Java学习之数组数组是一个变量，存储相同数据类型的一组数据 数组基本要素标识符：数组的名称，用于区分不同的数组 数组长度属性：length 元素下标：对数组元素进行编号，从0开始，数组中的每个元素都可以通过下标来访问 数组长度固定不变，避免数组越界 数组的声明、分配空间、赋值 声明数组：告诉计算机数据类型是什么  12345int[ ] score1;             //Java成绩i">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Java学习之数组</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-12-12" class="post-meta__date date">2017-12-12</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Array/">Array</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="Java学习之数组"><a href="#Java学习之数组" class="headerlink" title="Java学习之数组"></a>Java学习之数组</h1><p>数组是一个变量，存储相同数据类型的一组数据</p>
+<h2 id="数组基本要素"><a href="#数组基本要素" class="headerlink" title="数组基本要素"></a>数组基本要素</h2><p>标识符：数组的名称，用于区分不同的数组</p>
+<p>数组长度属性：length</p>
+<p>元素下标：对数组元素进行编号，从0开始，数组中的每个元素都可以通过下标来访问</p>
+<p><strong>数组长度固定不变，避免数组越界</strong></p>
+<h2 id="数组的声明、分配空间、赋值"><a href="#数组的声明、分配空间、赋值" class="headerlink" title="数组的声明、分配空间、赋值"></a>数组的声明、分配空间、赋值</h2><ol>
+<li>声明数组：告诉计算机数据类型是什么</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[ ] score1;             <span class="comment">//Java成绩</span></span><br><span class="line"><span class="keyword">int</span> score2[ ];             <span class="comment">//C++成绩</span></span><br><span class="line">String[ ] name;       	   <span class="comment">//姓名</span></span><br><span class="line">数据类型 数组名[ ] ; </span><br><span class="line">数据类型[ ] 数组名 ;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>分配空间：告诉计算机分配几个连续的空间</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">30</span>]; </span><br><span class="line">avgAge = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">6</span>];     </span><br><span class="line">name = <span class="keyword">new</span> String[<span class="number">30</span>];</span><br><span class="line">数据类型[ ] 数组名 = <span class="keyword">new</span> 数据类型[大小]  ;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>赋值：向分配的格子里放数据</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">score[<span class="number">0</span>] = <span class="number">89</span>;</span><br><span class="line">score[<span class="number">1</span>] = <span class="number">79</span>;</span><br><span class="line">score[<span class="number">2</span>] = <span class="number">76</span>;</span><br></pre></td></tr></table></figure>
+<p>###一维数组的静态初始化</p>
+<p><code>数据类型[]  数组名={初值0,初值1,…,初值n};</code> </p>
+<p>eg:    <code>int[] score={65,59,73,71,98,66};</code></p>
+<h3 id="遍历一维数组的方式"><a href="#遍历一维数组的方式" class="headerlink" title="遍历一维数组的方式"></a>遍历一维数组的方式</h3><ol>
+<li>通过for循环获取数组元素的下标，然后遍历对应元素</li>
+</ol>
+<p>例如：     </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">    <span class="comment">// 逐个遍历元素array[i]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>foreach输出</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(数据类型 变量名称:数组名称)&#123;</span><br><span class="line">               …</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> x:array)&#123;</span><br><span class="line">    <span class="comment">// x为当前正在遍历的数组元素</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h3><ul>
+<li><p>System中的一个静态方法。</p>
+</li>
+<li><p>public static native void arraycopy(Object src, int  srcPos,  Object  dest,  int  destPos,  int  length);</p>
+</li>
+<li><p>参数解释：     src:  源数组</p>
+<p>​                 srcPos:  源数组的起始位置             </p>
+<p>​            dest:  目标数组    </p>
+<pre><code>destPos:目标数组的起始位置     
+</code></pre><p>​            length:拷贝的数组元素个数</p>
+</li>
+</ul>
+<h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p>二维数组的声明与实例化：</p>
+<p><code>数据类型[][]组名称=new 数据类型[行的个数][列的个数];</code></p>
+<p><strong>注意：二维数组的length属性就是它所包含的“行的个数”。</strong></p>
+<ul>
+<li><p>访问语法：数组名称<code>[行的索引][列的索引]</code></p>
+</li>
+<li><p>静态初始化：<code>数据类型[][] 数组名称={</code></p>
+<p>​                {元素1，元素2……}，</p>
+<p>​                {元素1，元素2……}，</p>
+<p>​                ……</p>
+<p>​                }；</p>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
