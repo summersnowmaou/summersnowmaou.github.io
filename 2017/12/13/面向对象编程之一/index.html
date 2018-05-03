@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面向对象编程 一 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="面向对象编程（一） ​    面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种编程思想,它将对象作为问解决问题的基本元素, 利用对象和对象之间的相互作用来设计程序。​    以前的编程都是面向过程编程，需要了解每个步骤的实现方法，如果面对很复杂的程序设计，这种方法无疑会浪费大量的时间在一些无关的地方，从代码的角度考虑可能会影响时间复杂度和空间复">
+<meta name="keywords" content="OOB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程 一 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2017/12/13/面向对象编程之一/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="面向对象编程（一） ​    面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种编程思想,它将对象作为问解决问题的基本元素, 利用对象和对象之间的相互作用来设计程序。​    以前的编程都是面向过程编程，需要了解每个步骤的实现方法，如果面对很复杂的程序设计，这种方法无疑会浪费大量的时间在一些无关的地方，从代码的角度考虑可能会影响时间复杂度和空间复">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-03T09:30:13.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程 一 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="面向对象编程（一） ​    面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种编程思想,它将对象作为问解决问题的基本元素, 利用对象和对象之间的相互作用来设计程序。​    以前的编程都是面向过程编程，需要了解每个步骤的实现方法，如果面对很复杂的程序设计，这种方法无疑会浪费大量的时间在一些无关的地方，从代码的角度考虑可能会影响时间复杂度和空间复">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面向对象编程 一</h1>
+
+    <section id="post-content" class="article-content post">
+        <h1 id="面向对象编程（一）"><a href="#面向对象编程（一）" class="headerlink" title="面向对象编程（一）"></a>面向对象编程（一）</h1><hr>
+<p>​    面向对象编程（Object Oriented Programming，OOP，面向对象程序设计）是一种编程思想,它将对象作为问解决问题的基本元素, 利用对象和对象之间的相互作用来设计程序。<br>​    以前的编程都是面向过程编程，需要了解每个步骤的实现方法，如果面对很复杂的程序设计，这种方法无疑会浪费大量的时间在一些无关的地方，从代码的角度考虑可能会影响时间复杂度和空间复杂度。</p>
+<p>##面向对象思考问题方式</p>
+<ol>
+<li>首先考虑在问题域中设计到的对象有哪些</li>
+<li>其次考虑这些对象有怎样的特征和功能</li>
+<li>最后考虑对象和对象之间的关系</li>
+</ol>
+<p>面向对象的设计思想示例：</p>
+<ul>
+<li>用面向对象的思想来设计五子棋：</li>
+<li>黑白双方，这两方的行为是一模一样的</li>
+<li>棋盘系统，负责绘制画面</li>
+<li>规则系统，负责判定诸如犯规、输赢等</li>
+</ul>
+<p>##类与对象</p>
+<ol>
+<li><p>对象：用来描述客观事物的一个实体，由一组属性和行为构成</p>
+</li>
+<li><p>类：类是一个模板，它描述一类对象的行为和状态</p>
+</li>
+</ol>
+<p><strong>类与对象的创建</strong></p>
+<ul>
+<li><p>定义类的语法：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符]  <span class="class"><span class="keyword">class</span>  类名 </span>&#123;</span><br><span class="line"><span class="comment">//这里放属性和方法的声明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;  </span><br><span class="line">  String name;        <span class="comment">//姓名</span></span><br><span class="line">  <span class="keyword">boolean</span> sex;        <span class="comment">//性别</span></span><br><span class="line">  <span class="keyword">int</span> age;                <span class="comment">//年龄</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">speak</span><span class="params">(String word)</span></span>&#123;  <span class="comment">//说话</span></span><br><span class="line">      System.out.println(name + “说:” + word);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> void0 <span class="title">tread</span><span class="params">()</span></span>&#123;  <span class="comment">//行走</span></span><br><span class="line">      System.out.println(“四处走动…”);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>类中成员变量的定义</strong></p>
+<p>定义成员变量的语法：[访问修饰符]  数据类型  成员变量名 [= 初始值];</p>
+<ol>
+<li><p>成员变量的类型可以使用Java语言中的任何一种数据类型(包括基本类型和引用类型)。</p>
+</li>
+<li><p>在定义成员变量时可以对其进行初始化。如果不对其初始化，Java会使用默认的值对其进行初始化。</p>
+</li>
+<li><p>成员变量的作用域是整个类体。</p>
+<p>​</p>
+</li>
+</ol>
+<p><strong>局部变量和成员变量</strong></p>
+<table>
+<thead>
+<tr>
+<th>比较</th>
+<th style="text-align:center">成员变量</th>
+<th style="text-align:center">局部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义位置</td>
+<td style="text-align:center">直接在类中定义</td>
+<td style="text-align:center">定义在方法中</td>
+</tr>
+<tr>
+<td>声明赋值</td>
+<td style="text-align:center">可以在声明时赋初始值；若不赋值，会有默认初始值，引用类型的值为null</td>
+<td style="text-align:center">在使用前需要赋值</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td style="text-align:center">在整个类内部都是可见的，所有成员方法都可以使用它，如果访问权限允许，还可以在类外部使用</td>
+<td style="text-align:center">仅限于定义它的方法，在该方法外无法访问它</td>
+</tr>
+</tbody>
+</table>
+<p>注意：</p>
+<ol>
+<li>在同一个方法中，不允许有同名的局部变量。在不同的方法中，可以有同名的局部变量</li>
+<li>局部变量可以和成员变量同名，并且在使用时，局部变量具有更高的优先级</li>
+</ol>
+<p><strong>类中方法的定义</strong></p>
+<p>​    定义方法的语法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符]   返回值类型  方法名 (参数类型 参数名<span class="number">1</span>,…)&#123;</span><br><span class="line"><span class="comment">// 这里放方法的具体实现语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>对象的产生和使用</strong></p>
+<ul>
+<li>怎么根据设计好的类来创建一个对象?<br> 利用new关键词调用类的构造方法(类的一种特殊方法)就可创建该类的一个对象。</li>
+<li>构造方法：<ol>
+<li>构造方法的名字和类名相同，并且没有返回值，并且不要加void。</li>
+<li>构造方法的作用在于构造并初始化对象。</li>
+<li>每个类中都至少包含一个构造方法。</li>
+</ol>
+</li>
+<li>两种构造方法<ol>
+<li>默认构造方法<br>默认构造方法就是指不带参数的构造方法。<br>Java的类都要求有构造方法，如果没有定义构造方法，Java编译器会为我们提供一个默认的无参构造方法。</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;        <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">boolean</span> sex;        <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">int</span> age;            <span class="comment">//年龄</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tread</span><span class="params">()</span></span>&#123;  <span class="comment">//行走</span></span><br><span class="line">        System.out.println(“走走走…”);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();  <span class="comment">//用new调用该类的默认构造方法来创建一个对象</span></span><br><span class="line">        person.tread();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>带参构造方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;        <span class="comment">//姓名</span></span><br><span class="line">    String sex;        <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">int</span> age;            <span class="comment">//年龄</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String _name, String _sex, <span class="keyword">int</span> _age)</span></span>&#123;</span><br><span class="line">         name = _name; </span><br><span class="line">	   sex = _sex; </span><br><span class="line">         age = _age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;  <span class="comment">//行走</span></span><br><span class="line">        System.out.println(“人行走”);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Person(<span class="string">"TOM"</span>,<span class="string">"male"</span>,<span class="number">20</span>);  <span class="comment">//new对象时必须传参</span></span><br><span class="line">        person.walk();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：如果类中有一个自己编写的构造方法时，编译器就不会为我们再提供那个默认构造方法。</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    String name;        <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">boolean</span> sex;        <span class="comment">//性别</span></span><br><span class="line">    <span class="keyword">int</span> age;            <span class="comment">//年龄</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String _name, <span class="keyword">boolean</span> _sex, <span class="keyword">int</span> _age)</span></span>&#123;</span><br><span class="line">         name = _name; </span><br><span class="line">	   sex = _sex; </span><br><span class="line">         age = _age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;  <span class="comment">//行走</span></span><br><span class="line">        System.out.println(“人行走”);</span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();  <span class="comment">//这里编译就会报错</span></span><br><span class="line">        person.walk();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>##<strong>方法重载</strong><br>场景假设：如果有有人会很多表演那么我们可以总概括的说为他会表演，这就引出了重载的概念。</p>
+<p><em>重载（Overloading）</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Player</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(歌曲)</span></span>&#123;  <span class="comment">//演唱歌曲&#125;</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(钢琴)</span></span>&#123;  <span class="comment">//弹奏钢琴&#125;</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(剧本)</span></span>&#123;  <span class="comment">//根据剧本表演&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法重载：同一个类中，方法名相同，参数列表不同（参数类型不同、参数个数不同、参数顺序不同）</p>
+
+    </section>
+
+
+  </header>
+
+</article>
+
+<div class="archive-meta">
+
+
+
+
+    <h3>标签</h3>
+    <div class="tagslist">
+        
+            
+                <span><a href="/tags/Array/" title="Array">Array<sup>1</sup></a></span>
+            
+        
+            
+                <span><a href="/tags/OOB/" title="OOB">OOB<sup>1</sup></a></span>
+            
+        
+    </div>
+
+
+
+    <h3>归档</h3>
+    <div class="archiveslist">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+
+</div>
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
