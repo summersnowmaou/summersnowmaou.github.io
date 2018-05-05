@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面向对象编程之二 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="面向对象编程-二一、this关键字 每个类的每个非静态方法(没有被static修饰)都会隐含一个this引用名称，它指向调用这个方法的对象(当前对象)。 当在方法中使用本类的非static属性时，都会隐含地使用this名称。 this可以看作是一个变量，它的值就是当前对象的引用  this关键字的用法 当类中某个非静态方法的参数名跟类的某个成员变量名相同时，为了避免参数的作用范围覆盖了成员变量的作">
+<meta name="keywords" content="OOB 单例设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程之二 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2017/12/14/面向对象编程之二/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="面向对象编程-二一、this关键字 每个类的每个非静态方法(没有被static修饰)都会隐含一个this引用名称，它指向调用这个方法的对象(当前对象)。 当在方法中使用本类的非static属性时，都会隐含地使用this名称。 this可以看作是一个变量，它的值就是当前对象的引用  this关键字的用法 当类中某个非静态方法的参数名跟类的某个成员变量名相同时，为了避免参数的作用范围覆盖了成员变量的作">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-05T14:11:50.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程之二 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="面向对象编程-二一、this关键字 每个类的每个非静态方法(没有被static修饰)都会隐含一个this引用名称，它指向调用这个方法的对象(当前对象)。 当在方法中使用本类的非static属性时，都会隐含地使用this名称。 this可以看作是一个变量，它的值就是当前对象的引用  this关键字的用法 当类中某个非静态方法的参数名跟类的某个成员变量名相同时，为了避免参数的作用范围覆盖了成员变量的作">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面向对象编程之二</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-12-14" class="post-meta__date date">2017-12-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/OOB-单例设计模式/">OOB 单例设计模式</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="面向对象编程-二"><a href="#面向对象编程-二" class="headerlink" title="面向对象编程-二"></a>面向对象编程-二</h1><h2 id="一、this关键字"><a href="#一、this关键字" class="headerlink" title="一、this关键字"></a>一、this关键字</h2><ul>
+<li>每个类的每个非静态方法(没有被static修饰)都会隐含一个this引用名称，它指向调用这个方法的对象(当前对象)。</li>
+<li>当在方法中使用本类的非static属性时，都会隐含地使用this名称。</li>
+<li>this可以看作是一个变量，它的值就是当前对象的引用</li>
+</ul>
+<h3 id="this关键字的用法"><a href="#this关键字的用法" class="headerlink" title="this关键字的用法"></a>this关键字的用法</h3><ol>
+<li>当类中某个非静态方法的参数名跟类的某个成员变量名相同时，为了避免参数的作用范围覆盖了成员变量的作用范围，必须明确地使用this关键字来指定成员变量。</li>
+<li>如果某个构造方法的第一条语句具有形式this(…)，那么这个构造方法将调用本类中的其他构造方法。</li>
+</ol>
+<h2 id="二、static关键字"><a href="#二、static关键字" class="headerlink" title="二、static关键字"></a>二、static关键字</h2><ul>
+<li>在类中，用static声明的成员变量为静态成员变量，它是该类的公用变量，对于该类的所有对象来说，static成员变量只有一份。</li>
+<li>用static声明的方法为静态方法，该方法独立于类的实例，所以也叫类方法。<ul>
+<li>静态方法中只能直接调用本类中其他的静态成员(变量和方法)。</li>
+<li>静态方法中不能使用this和super关键字。</li>
+</ul>
+</li>
+<li>静态成员可以通过类名(不需要实例化)或类的实例去访问。</li>
+</ul>
+<h3 id="static静态代码块"><a href="#static静态代码块" class="headerlink" title="static静态代码块"></a>static静态代码块</h3><ul>
+<li><p>在类中可以使用不包含在任何方法中的静态代码块(static block)，当类被JVM载入时，静态代码块被执行，且只被执行一次。</p>
+</li>
+<li><p>静态代码块经常用来初始化类的静态成员变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">// 静态代码块内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、封装性"><a href="#三、封装性" class="headerlink" title="三、封装性"></a>三、封装性</h2><ul>
+<li>封装（Encapsulation）<ul>
+<li>对外部不可见,隐藏对象的属性和实现细节。</li>
+<li>封装的好处：隐藏类的实现细节，让使用者只能通过程序员规定的方法来访问数据，可以方便的加入存取控制语句，限制不合理操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="封装性的体现"><a href="#封装性的体现" class="headerlink" title="封装性的体现"></a>封装性的体现</h3><ul>
+<li>类的封装(属性、方法都存在于某个类中)</li>
+<li>对字段的封装<ol>
+<li>字段设置为私有(private)</li>
+<li>添加get /set 方法</li>
+</ol>
+</li>
+<li>访问修饰符的限制，保证数据的安全</li>
+</ul>
+<h2 id="四、继承性"><a href="#四、继承性" class="headerlink" title="四、继承性"></a>四、继承性</h2><ul>
+<li>继承是一个类继承另一个类.这个类拥有父类可以被继承的成员</li>
+<li>继承是面向对象特征之一</li>
+<li>实现继承的类称为子类也叫派生类,而被继承的类称为父类,也叫超类或基类</li>
+<li>类的方法和属性可以被继承<ul>
+<li>私有的属性和方法不能被继承</li>
+<li>构造方法不能被继承</li>
+</ul>
+</li>
+</ul>
+<h3 id="继承的好处"><a href="#继承的好处" class="headerlink" title="继承的好处"></a>继承的好处</h3><ul>
+<li>实现代码的重用和扩展</li>
+<li>模拟现实世界的关系</li>
+<li>结构更清晰</li>
+</ul>
+<p><strong>继承具有传递性，在Java中一个类只能有一个父类，这就是Java的“单继承性”。</strong></p>
+<p><strong>java.lang.Object类是所有类的父类。</strong></p>
+<h3 id="如何使用继承"><a href="#如何使用继承" class="headerlink" title="如何使用继承"></a>如何使用继承</h3><ul>
+<li>要继承一个类，可以使用extends关键字，意味着扩展父类的功能。</li>
+<li>类继承的基本语法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;modifier&gt;  class  &lt;name&gt;  [extends &lt;superclass&gt; ]  &#123;</span><br><span class="line">	&lt;declaration&gt; *</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五、单例设计模式"><a href="#五、单例设计模式" class="headerlink" title="五、单例设计模式"></a>五、单例设计模式</h2><ol>
+<li>私有化构造方法</li>
+<li>在类的内部实例化该类的对象，该类的对象必须是static全局变量。</li>
+<li>编写获取该单例对象的static方法。<ol>
+<li>饿汉式”单例模式:当类加载到JVM时，单例对象直接创建；</li>
+<li>“懒汉式”单例模式:当类加载到JVM时，并不直接创建单例对象，用户请求单例对象时(用户需要使用时)，才实例化该单例对象；</li>
+</ol>
+</li>
+</ol>
+<h2 id="六、super关键字"><a href="#六、super关键字" class="headerlink" title="六、super关键字"></a>六、super关键字</h2><ul>
+<li>在Java类中使用super来引用父类的成员<ul>
+<li>super可用于访问父类中定义的属性</li>
+<li>super可用于调用父类中定义的成员方法</li>
+<li>super(…)可用于在子类构造方法中调用父类的构造方法</li>
+</ul>
+</li>
+</ul>
+<p>示例：</p>
+<ol>
+<li><p>使用super调用基类的属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> value=<span class="number">200</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">		value=<span class="number">100</span>;</span><br><span class="line">		<span class="keyword">super</span>.value=<span class="number">50</span>;</span><br><span class="line">		System.out.println(“value的值”+value);</span><br><span class="line">		System.out.println(“<span class="keyword">super</span>.value的值”+<span class="keyword">super</span>.value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>super调用父类构造方法</p>
+<ol>
+<li>创建子类对象会先调用基类的构造方法，默认调用基类无参构造方法。</li>
+<li>要调用基类其他带参构造方法，则使用super</li>
+</ol>
+</li>
+<li><p>使用super调用基类中构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Class Father&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span></span>&#123;</span><br><span class="line">		System.out.println(“父类无参构造”);	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.n=n;</span><br><span class="line">		System.out.println(“父类中带参构造”+n);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> n;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(<span class="number">300</span>);</span><br><span class="line">		System.out.println(“子类无参构造”);	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.n=n;</span><br><span class="line">		System.out.println(“子类带参构造”+n);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用super的注意事项：</strong></p>
+<ol>
+<li>当子类和父类都有同名的属性时，在子类中如果要使用父类的属性 super.属性</li>
+<li>super只能应用在成员方法和构造方法中，不能应用在静态方法中（和this是一样的）</li>
+<li>如果在构造方法中使用必须放在第一行</li>
+<li>在构造方法中this()和super()不能同时出现</li>
+</ol>
+<p>常见的错误：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	String name;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name=name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">()</span></span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述代码子类构造方法中没有super(),则调用父类无参构造而父类中没有无参构造，编译错误。</p>
+<h3 id="this和super关键字对比"><a href="#this和super关键字对比" class="headerlink" title="this和super关键字对比"></a>this和super关键字对比</h3><p>| NO.  |  比较点  | this                                      | super              |<br>| :–: | :——: | —————————————– | —————— |<br>|  1   | 访问属性 | 首先在子类中查找，如果没有就在 父类中查找 | 直接查找父类       |<br>|  2   | 访问方法 | 先在子类在中找，如果没有就去父类中查找    | 直接访问父类中方法 |<br>|  3   | 调用构造 | 调用本类中的其他构造方法                  | 调用父类的构造方法 |<br>|  4   |   特殊   | 指自身的对象                              | 没有               |<br>|  5   | 作为参数 | 可以作为参数                              | 没有               |</p>
+<p><strong>注意：this和super都不能在static方法中调用</strong></p>
+</li>
+</ol>
+<h2 id="七、四种访问权限"><a href="#七、四种访问权限" class="headerlink" title="七、四种访问权限"></a>七、四种访问权限</h2><ul>
+<li><p>对类中的属性和方法的可见度</p>
+</li>
+<li><p>访问修饰符</p>
+<ul>
+<li>private</li>
+<li>default 包级别访问权限</li>
+<li>protected</li>
+<li>public</li>
+</ul>
+</li>
+<li><p>类的访问修饰符</p>
+<ul>
+<li>public：任何包中的类都可以访问该类</li>
+<li>默认值：同一个包中的类可以访问该类</li>
+</ul>
+</li>
+<li><p>成员的访问修饰符</p>
+<ul>
+<li>private：只对本身类可见</li>
+<li>默认值：对同一包中的类可见</li>
+<li>protected：对跨包的子类和同一包中的类可见</li>
+<li>public：对一切类可见</li>
+</ul>
+</li>
+<li><p>注意：访问成员的前提是首先能访问成员所属的类</p>
+</li>
+<li><p>在Java中，可以在类、类的属性以及类的方法前面加上一个修饰符（modifier），来对类进行一些访问上的控制。</p>
+<p>|  修饰符   | 同一个类中 | 同一个包中 | 子类中(不同包) | 全局 |<br>| :——-: | :——–: | :——–: | :————: | :–: |<br>|  private  |    Yes     |            |                |      |<br>|  default  |    Yes     |    Yes     |                |      |<br>| protected |    Yes     |    Yes     |      Yes       |      |<br>|  public   |    Yes     |    Yes     |      Yes       | Yes  |</p>
+<p>注意：[default],public也可以用来修饰一个类,但是protected不能修饰一个类</p>
+</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span>   <span class="keyword">int</span> n_private=<span class="number">1</span>;</span><br><span class="line">              <span class="keyword">int</span> n_friendly=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">int</span> n_protected=<span class="number">3</span>;</span><br><span class="line">    <span class="keyword">public</span>    <span class="keyword">int</span> n_public=<span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">        n_private=<span class="number">10</span>;</span><br><span class="line">        n_friendly=<span class="number">20</span>;</span><br><span class="line">        n_protected=<span class="number">30</span>;</span><br><span class="line">        n_public=<span class="number">40</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="八、方法重写-override"><a href="#八、方法重写-override" class="headerlink" title="八、方法重写(override)"></a>八、方法重写(override)</h2><ul>
+<li>当子类继承父类时，可以从父类继承它的属性和方法，如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫做方法的重写(override)</li>
+<li>重写的注意事项(三要素)：<ol>
+<li>只能存在于子类和父类之间。</li>
+<li>子类的方法名称、输入参数和返回值类型完全一致或子类方法返回值类型是父类方法返回值类型的子类。</li>
+<li>权限不能比父类方法更加严格。</li>
+</ol>
+</li>
+<li>注意：重写的前提是先继承了父类的方法。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="comment">//省略字段封装方法</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> “名字:”+name+”年龄:”+age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String school;</span><br><span class="line">	<span class="comment">//省略字段封装方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> “名字:”+getName()+”年龄:”+getAge()+”学校:”+school;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Student stu=<span class="keyword">new</span> Student();</span><br><span class="line">		stu.setName(“小明”);</span><br><span class="line">		stu.setAge(<span class="number">20</span>);</span><br><span class="line">		stu.setSchool(“千锋”);</span><br><span class="line">		Person  p=<span class="keyword">new</span> Person();</span><br><span class="line">		p.setName(“小强”);</span><br><span class="line">		p.setAge(<span class="number">1000</span>);</span><br><span class="line">		System.out.println(stu.getInfo());</span><br><span class="line">		System.out.println(p.getInfo());</span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>对比重写和重载</strong></p>
+<table>
+<thead>
+<tr>
+<th>NO</th>
+<th>比较点</th>
+<th>重写</th>
+<th>重载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>单词</td>
+<td>Override</td>
+<td>Overload</td>
+</tr>
+<tr>
+<td>2</td>
+<td>范围</td>
+<td>继承（子类）</td>
+<td>同一个类里</td>
+</tr>
+<tr>
+<td>3</td>
+<td>对方法的要求</td>
+<td>和父类的方法名一致，参数列表一致，返回类型兼容</td>
+<td>方法名一致，参数列表不同，返回值类型无要求</td>
+</tr>
+<tr>
+<td>4</td>
+<td>对访问权限的要求</td>
+<td>不能比父类的访问权限更加严格</td>
+<td>对访问权限没要求</td>
+</tr>
+</tbody>
+</table>
+<h3 id="方法重写注意事项"><a href="#方法重写注意事项" class="headerlink" title="方法重写注意事项"></a>方法重写注意事项</h3><ol>
+<li>在JDK1.5之后，重写方法的返回值类型可以和父类中的方法返回值类型兼容 （引用类型之间）</li>
+<li>如果子类中成员变量、静态变量、静态方法 和父类中成员变量、静态变量、静态方法相同，这种情况不是重写，可以认为是隐藏，只有非static成员方法之间才是重写。</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
