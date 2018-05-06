@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面向对象编程-三 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="面向对象编程-三一、Object类 Object类是所有Java类的根基类(“祖先类”) 如果在类的声明中未使用extends关键字指明其基类，则默认基类为Object类 基本形式为：public class Object   toString（）方法   Object类中定义有public  String toString()方法，其返回值是String类型，描述当前对象的有关信息。  如果直接">
+<meta name="keywords" content="OOB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程-三 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2017/12/27/面向对象编程之三/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="面向对象编程-三一、Object类 Object类是所有Java类的根基类(“祖先类”) 如果在类的声明中未使用extends关键字指明其基类，则默认基类为Object类 基本形式为：public class Object   toString（）方法   Object类中定义有public  String toString()方法，其返回值是String类型，描述当前对象的有关信息。  如果直接">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-06T13:28:48.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程-三 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="面向对象编程-三一、Object类 Object类是所有Java类的根基类(“祖先类”) 如果在类的声明中未使用extends关键字指明其基类，则默认基类为Object类 基本形式为：public class Object   toString（）方法   Object类中定义有public  String toString()方法，其返回值是String类型，描述当前对象的有关信息。  如果直接">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面向对象编程-三</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-12-27" class="post-meta__date date">2017-12-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/OOB/">OOB</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h1 id="面向对象编程-三"><a href="#面向对象编程-三" class="headerlink" title="面向对象编程-三"></a>面向对象编程-三</h1><h2 id="一、Object类"><a href="#一、Object类" class="headerlink" title="一、Object类"></a>一、Object类</h2><ul>
+<li><code>Object</code>类是所有Java类的根基类(“祖先类”)</li>
+<li>如果在类的声明中未使用extends关键字指明其基类，则默认基类为<code>Object</code>类</li>
+<li>基本形式为：<code>public class Object</code></li>
+</ul>
+<ol>
+<li>toString（）方法</li>
+</ol>
+<ul>
+<li><p><code>Object</code>类中定义有<code>public  String toString()</code>方法，其返回值是<code>String</code>类型，描述当前对象的有关信息。</p>
+</li>
+<li><p>如果直接打印某对象的引用，则默认会调用这个对象的<code>toString()</code>方法，默认打印的内容中包含这个引用所指向的内存地址。</p>
+</li>
+<li><p>可以根据需要在用户自定义类中重写<code>toString()</code>方法。</p>
+</li>
+<li><p><code>Object</code>类的<code>toString</code>方法返回一个包含该类的对象是一个实例的名称字符串的符号<code>@</code> ‘，和符号进制表示的对象的哈希码。换句话说，此方法返回一个等于值的字符串：</p>
+<p><code>getClass().getName() + &#39;@&#39; + Integer.toHexString(hashCode())</code></p>
+</li>
+</ul>
+<ol start="2">
+<li>equals()方法</li>
+</ol>
+<ul>
+<li>Object类中定义有public boolean equals(Object obj) 方法，提供定义对象是否“相等”的逻辑。</li>
+<li>Object的equals方法定义为：x.equals(y)，当x和y指向同一个地址时返回true，否则返回false。</li>
+<li>String类中已经重写了equals(Object  obj)方法，重写后的方法比较的是两个字符串的”内容”是否一样(注意：==比较对象的引用)。</li>
+<li>可以根据需要在用户自定义类型中重写equals方法。</li>
+</ul>
+<p><strong>对于equals方法的扩展：</strong></p>
+<ul>
+<li>它是空的自反：对于任何非空的参考价值<code>x</code>，<code>x.equals(x)</code>应该返回<code>true</code>。</li>
+<li>它是空的对称的：对于任何非空的参考值<code>x</code>和<code>y</code>，<code>x.equals(y)</code>应该返回<code>true</code>当且仅当<code>y.equals(x)</code>返回<code>true</code>。</li>
+<li>它是空的传递：对于任何非空的参考值<code>x</code>，<code>y</code>，和<code>z</code>，如果<code>x.equals(y)</code>返回<code>true</code>和<code>y.equals(z)</code>返回<code>true</code>，然后<code>x.equals(z)</code>应该返回<code>true</code>。</li>
+<li>它是空的一致的：对于任何非空的参考值<code>x</code>和<code>y</code>，多次调用<code>x.equals(y)</code>始终返回<code>true</code>或始终返回<code>false</code>，没有提供信息用于<code>equals</code>比较对象被修改。</li>
+<li>对于任何非空的参考价值<code>x</code>，<code>x.equals(null)</code>应该返回<code>false</code>。 </li>
+</ul>
+<h2 id="二、多态性"><a href="#二、多态性" class="headerlink" title="二、多态性"></a>二、多态性</h2><p>​    封装是为了保护属性的一种操作，继承是为了扩展类的功能。</p>
+<p>​    而多态性是由封装性和继承性引出的面向对象程序设计语言的另一特征。</p>
+<ol>
+<li><p>多态性的体现</p>
+<ol>
+<li>从方法的角度来看：<ul>
+<li>方法的重载与重写<ul>
+<li>重载(<code>overloading</code>)：根据传入的参数不同，完成的功能也不同</li>
+<li>重写(<code>override</code>)：子类根据需求重写父类中的方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>从对象的角度来看：<ul>
+<li>对象的多态性主要分为两种：<ul>
+<li>向上转型： 子类对象-&gt;父类对象  (程序会自动完成)<ul>
+<li>格式：父类 父类对象=子类实例</li>
+<li>向上转型后，因为操作的是父类对象，所以无法找到在子类中定义的新方法;但如果子类重写了父类的某个方法，则调用的是重写后的方法。</li>
+</ul>
+</li>
+<li>向下转型：父类对象-&gt;子类对象 (必须明确的指明要转型的子类类型)<ul>
+<li>格式：子类 子类对象=(子类)父类实例</li>
+<li><strong>注意：向下转型前先要向上转型。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><code>instanceof</code>关键字</p>
+<ol>
+<li>在java中可以使用instanceof关键字判断一个对象是否属于一个类的实例</li>
+<li>格式：对象  <code>instanceof</code>类 -&gt; 返回<code>boolean</code>类型</li>
+</ol>
+</li>
+<li><p><code>final</code>关键字</p>
+<ol>
+<li><p>在Java中声明类、属性和方法时，可以使用关键字final来修饰。</p>
+</li>
+<li><p><strong>注意：</strong></p>
+<ol>
+<li><p><code>final</code>修饰变量(成员变量或局部变量),则成为常量，只能赋值一次</p>
+<p><code>final</code> 类型  variableName;<br>修饰成员变量时，定义时同时给出初始值，而修饰局部变量时不做要求。</p>
+</li>
+<li><p><code>final</code>修饰方法，则该方法不能被子类重写</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> 返回值类型  methodName(paramList)   &#123;</span><br><span class="line">  …   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>3. `final`修饰类，则类不能被继承
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">finalClassName</span></span>&#123;</span><br><span class="line">  …     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、抽象类与接口"><a href="#三、抽象类与接口" class="headerlink" title="三、抽象类与接口"></a>三、抽象类与接口</h2><p><strong>抽象类：</strong></p>
+<ul>
+<li>用<code>abstract</code>修饰的类即为抽象类  </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> 抽象类名</span>&#123;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>抽象类不能被实例化，必须被继承，抽象方法必须被重写，生成它的子类。</li>
+<li>由<code>abstract</code>修饰的方法就是抽象方法，抽象方法没有方法体。</li>
+<li><strong>抽象类不一定要包含抽象方法，若类中包含了抽象方法，则该类必须被定义为抽象类。</strong></li>
+<li>如果一个子类没有实现抽象父类中所有的抽象方法，则子类也成为一个抽象类。</li>
+<li>构造方法、静态方法、私有方法、final方法不能被声明为抽象的方法。</li>
+</ul>
+<p><strong>接口：</strong></p>
+<ul>
+<li>接口（<code>interface</code>）是抽象方法和常量值的定义的集合。</li>
+<li>接口是一种“标准”、“契约”。</li>
+<li>从本质上讲，接口是一种特殊的抽象类，这种抽象类中只能包含常量和方法的定义，而没有变量和方法的实现。</li>
+</ul>
+<p>接口的声明语法</p>
+<ul>
+<li>包括接口声明和接口体</li>
+<li>完整的接口声明:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[public] interface 接口名称[extends listOfSuperInterface] &#123;</span><br><span class="line">  …  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>接口体包括常量定义和方法定义：</p>
+<ol>
+<li>常量定义: type NAME=value;  该常量被实现该接口的多个类共享; 具有<code>public</code> ,<code>final</code>, <code>static</code>的属性.</li>
+<li>方法体定义:具有 <code>public</code>和<code>abstract</code>属性</li>
+</ol>
+</li>
+<li><p>与抽象类一样，接口要使用也必须通过子类，子类通过<code>implements</code>关键字实现接口</p>
+</li>
+<li><p>一个类可以实现多个接口,在implements子句中用逗号分开</p>
+</li>
+<li><p>非抽象子类必须实现接口中定义的所有方法</p>
+</li>
+<li><p>实现格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 子类 <span class="keyword">implements</span>接口<span class="title">A</span>，接口<span class="title">B</span>…</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>接口的使用规则</p>
+<ul>
+<li>接口中所有的方法都是<code>public abstract</code>。</li>
+<li>在接口中声明方法时，不能使用<code>static，final，synchronized，private，protected</code>等修饰符。一个接口可以继承自另一个接口。</li>
+<li>Java中不允许类的多继承，但允许接口的多继承。</li>
+<li>接口中可以有数据成员，这些成员默认都是<code>public static final</code>。</li>
+</ul>
+<p>接口的用途</p>
+<ol>
+<li>通过接口实现不相关类的相同行为,而无需考虑这些类之间的关系.</li>
+<li>通过接口指明多个类需要实现的方法</li>
+<li>通过接口了解对象的交互界面,而无需了解对象所对应的类</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
