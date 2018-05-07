@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      面向对象编程-四 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="一、基本数据类型的包装类 Java语言针对所有的基本数据类型都提供了对应的包装类。     基本数据类型 包装类     byte（字节） java.lang.Byte   char（字符） java.lang.Character   short（短整型） java.lang.Short   int（整型） java.lang.Integer   long（长整型） java.lang.Long">
+<meta name="keywords" content="OOB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象编程-四 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2017/12/27/面向对象编程之四/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="一、基本数据类型的包装类 Java语言针对所有的基本数据类型都提供了对应的包装类。     基本数据类型 包装类     byte（字节） java.lang.Byte   char（字符） java.lang.Character   short（短整型） java.lang.Short   int（整型） java.lang.Integer   long（长整型） java.lang.Long">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-07T12:58:15.156Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象编程-四 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="一、基本数据类型的包装类 Java语言针对所有的基本数据类型都提供了对应的包装类。     基本数据类型 包装类     byte（字节） java.lang.Byte   char（字符） java.lang.Character   short（短整型） java.lang.Short   int（整型） java.lang.Integer   long（长整型） java.lang.Long">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">面向对象编程-四</h1>
+
+    <section id="post-content" class="article-content post">
+        <h2 id="一、基本数据类型的包装类"><a href="#一、基本数据类型的包装类" class="headerlink" title="一、基本数据类型的包装类"></a>一、基本数据类型的包装类</h2><ul>
+<li>Java语言针对所有的基本数据类型都提供了对应的包装类。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte（字节）</td>
+<td>java.lang.Byte</td>
+</tr>
+<tr>
+<td>char（字符）</td>
+<td>java.lang.Character</td>
+</tr>
+<tr>
+<td>short（短整型）</td>
+<td>java.lang.Short</td>
+</tr>
+<tr>
+<td>int（整型）</td>
+<td>java.lang.Integer</td>
+</tr>
+<tr>
+<td>long（长整型）</td>
+<td>java.lang.Long</td>
+</tr>
+<tr>
+<td>float（浮点型）</td>
+<td>java.lang.Float</td>
+</tr>
+<tr>
+<td>double（双精度）</td>
+<td>java.lang.Double</td>
+</tr>
+<tr>
+<td>boolean（布尔）</td>
+<td>java.lang.Boolean</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>包装类和基本类型、</p>
+<ul>
+<li>基本数据类型转换为包装类</li>
+</ul>
+<p><code>Integer intValue = new Integer(21);</code></p>
+<ul>
+<li>包装类转换成基本类型</li>
+</ul>
+<p><code>Integer integerId=new Integer(25);</code></p>
+<p><code>int intId=integerId.intValue();</code></p>
+</li>
+<li><p>自动装箱、拆箱</p>
+<ul>
+<li>JDK5.0中为基本数据类型提供了自动装箱(boxing)、拆箱(unboxing)功能：<ul>
+<li>装箱：将基本数据类型包装为对应的包装类对象</li>
+<li>拆箱：将包装类对象转换成对应的基本数据类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、字符串相关类"><a href="#二、字符串相关类" class="headerlink" title="二、字符串相关类"></a>二、字符串相关类</h2><ol>
+<li><p>String类</p>
+<p>（1）String代表字符串类型，字符串的内容本身不可改变，字符串存储于“字符串常量池”中。</p>
+<p>（2）String的两种实例化方式</p>
+<p>​    a: 直接赋值法</p>
+<p>​    eg:  <code>String str=“Hello World”;</code></p>
+<p>​    b: 通过new操作符实例化</p>
+<p>​     eg: <code>String str=new String(“Hello World”);</code></p>
+<p>（3）一个字符串就是一个String类的匿名对象。</p>
+<p>​        所谓匿名对象，就是在堆内存中开辟了空间，但在栈内存中并没有引用指向的对象。</p>
+<p>（4）字符串常用方法</p>
+<p>​    <code>public String(byte[] values)</code>     用比特数组values创建一个String对象。</p>
+<p>​    <code>public char charAt(int index)</code>    求字符串某一位置字符。</p>
+<p>​    <code>public String substring(int beginIndex)</code>    该方法从beginIndex位置起，从当前字符串中取出剩余的字符作为一个新的字符串返回。</p>
+<p>​    <code>public String substring(int beginIndex, int endIndex)</code>    该方法从beginIndex位置起，从当前字符串中取出到endIndex-1位置的字符作为一个新的字符串返回。</p>
+<p>​    <code>public boolean equals(Object anotherObject)</code>    比较当前字符串和参数字符串，在两个字符串相等的时候返回true，否则返回false。</p>
+<p>​    <code>public int indexOf(int ch/String str)</code>    用于查找当前字符串中字符或子串，返回字符或子串在当前字符串中从左边起首次出现的位置，若没有出现则返回-1。</p>
+<p>​    <code>public int lastIndexOf(int ch/String str)</code>    该方法与前一种类似，区别在于该方法从字符串的末尾位置向前查找。</p>
+<p>​    <code>public String toLowerCase()</code>    返回将当前字符串中所有字符转换成小写后的新串</p>
+<p>​    <code>public String toUpperCase()</code>    返回将当前字符串中所有字符转换成大写后的新串</p>
+<p>​    <code>String trim()</code>    截去字符串两端的空格，但对于中间的空格不处理。</p>
+</li>
+<li><p>StringBuffer类：</p>
+<p>(1)StringBuffer代表可变的字符序列。</p>
+<p>​    StringBuffer称为字符串缓冲区，它的工作原理是：预先申请一块内存，存放字符序列，如果字符序列满了，会重新改变缓存区的大小，以容纳更多的字符序列。</p>
+<p>(2)StringBuffer是可变对象，这个是与String最大的不同(如果连续操作String对象，则会产生大量的“垃圾”，而且“断开-连接”很频繁。)</p>
+</li>
+<li><p>StringBuilder类</p>
+<p>StringBuilder和StringBuffer功能几乎是一样的，只是 StringBuilder是线程不安全的</p>
+</li>
+</ol>
+<h2 id="三、内部类"><a href="#三、内部类" class="headerlink" title="三、内部类"></a>三、内部类</h2><ol>
+<li>在类的内部定义另一个类。如果在类Outer的内部再定义一个类Inner，此时Inner就称为内部类，而Outer则称为外部类。</li>
+<li>内部类的定义格式</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 外部类</span>&#123;</span><br><span class="line">  <span class="comment">//外部类的成员</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 内部类</span>&#123;</span><br><span class="line">    <span class="comment">//内部类的成员</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>内部类在编译完成后也会产生.class文件，而文件名称则是”外部类名称$内部类名称.class”</p>
+</li>
+<li><p>使用内部类的原因：</p>
+<p>比如：心脏属于人类的某个部分：但心脏不能简单用属性或者方法表示一个心脏，因为心脏也有自己的属性和行为，所以需要写在人类的内部。</p>
+<ul>
+<li>好处：<ol>
+<li>可以方便地访问外部类的私有属性</li>
+<li>减少了类文件编译后的产生的字节码文件的大小</li>
+</ol>
+</li>
+<li>缺点：使程序结构不清楚</li>
+</ul>
+</li>
+<li><p><strong>成员内部类</strong></p>
+<ol>
+<li>成员内部类中不能定义static变量</li>
+<li>成员内部类持有外部类的引用</li>
+<li>在文件管理方面，成员内部类在编译完成后也会产生.class文件，而文件名称则是”外部类名称$内部类名称.class”</li>
+<li>外部实例化成员内部类的格式：外部类.内部类  内部类对象=外部类实例.new 内部类();</li>
+</ol>
+</li>
+<li><p><strong>静态内部类</strong></p>
+<ol>
+<li>如果一个内部类使用static声明，则此内部类就称为静态内部类，其实也相当于外部类。可以通过外部类.内部类来访问。</li>
+<li>静态内部类不会持有外部类的引用，创建时可以不用创建外部类对象</li>
+<li>静态内部类可以访问外部的静态变量，如果访问外部类的非static成员变量必须通过外部类的实例访问</li>
+<li>外部实例化静态内部类对象的格式：外部类.内部类  内部类对象= new  外部类.内部类();</li>
+</ol>
+</li>
+<li><p><strong>局域内部类</strong></p>
+<ol>
+<li>局域内部类是定义在一个方法中的内嵌类，所以类的作用范围仅限于该方法中，而类生成的对象也只能在该方法中使用。</li>
+<li>局域内部类不能包含静态成员</li>
+<li>特别注意：局域内部类要想访问包含其的方法中的参数，则方法中的参数前必须加上final关键字(JDK&lt;=1.7)。</li>
+</ol>
+</li>
+<li><p><strong>匿名内部类</strong></p>
+<ol>
+<li><p>如果一个内部类在整个操作中只使用一次的话，就可以定义为匿名内部类</p>
+</li>
+<li><p><em>没有名字的内部类，这是java为了方便我们编写程序而设计的一个机制，因为有时候有的内部类只需要创建一个它的对象就可以了，以后再不会用到这个类，这时候使用匿名内部类就比较合适</em></p>
+<p>​</p>
+</li>
+</ol>
+</li>
+</ol>
+
+    </section>
+
+
+  </header>
+
+</article>
+
+<div class="archive-meta">
+
+
+
+
+    <h3>标签</h3>
+    <div class="tagslist">
+        
+            
+                <span><a href="/tags/OOB/" title="OOB">OOB<sup>3</sup></a></span>
+            
+        
+            
+                <span><a href="/tags/Array/" title="Array">Array<sup>1</sup></a></span>
+            
+        
+            
+                <span><a href="/tags/OOB-单例设计模式/" title="OOB 单例设计模式">OOB 单例设计模式<sup>1</sup></a></span>
+            
+        
+    </div>
+
+
+
+    <h3>归档</h3>
+    <div class="archiveslist">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+
+
+</div>
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
