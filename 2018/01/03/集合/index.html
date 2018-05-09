@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      集合 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="一、集合概念与框架结构集合的概念 集合：Java API所提供的一系列类的实例，可以用于动态存放多个对象。 Java集合框架提供了一套性能优良、使用方便的接口和类，它们位于java.util包中 特点：长度不固定，只能存储引用类型对象  Java集合框架  List 接口存储一组不唯一(可重复)，有序（插入顺序）的对象 Set 接口存储一组唯一(不可重复)的对象  Map接口存储一组键值对象，提供">
+<meta name="keywords" content="Collection">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2018/01/03/集合/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="一、集合概念与框架结构集合的概念 集合：Java API所提供的一系列类的实例，可以用于动态存放多个对象。 Java集合框架提供了一套性能优良、使用方便的接口和类，它们位于java.util包中 特点：长度不固定，只能存储引用类型对象  Java集合框架  List 接口存储一组不唯一(可重复)，有序（插入顺序）的对象 Set 接口存储一组唯一(不可重复)的对象  Map接口存储一组键值对象，提供">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-09T13:38:35.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="集合 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="一、集合概念与框架结构集合的概念 集合：Java API所提供的一系列类的实例，可以用于动态存放多个对象。 Java集合框架提供了一套性能优良、使用方便的接口和类，它们位于java.util包中 特点：长度不固定，只能存储引用类型对象  Java集合框架  List 接口存储一组不唯一(可重复)，有序（插入顺序）的对象 Set 接口存储一组唯一(不可重复)的对象  Map接口存储一组键值对象，提供">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">集合</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-01-03" class="post-meta__date date">2018-01-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Collection/">Collection</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="一、集合概念与框架结构"><a href="#一、集合概念与框架结构" class="headerlink" title="一、集合概念与框架结构"></a>一、集合概念与框架结构</h2><h3 id="集合的概念"><a href="#集合的概念" class="headerlink" title="集合的概念"></a>集合的概念</h3><ul>
+<li>集合：Java API所提供的一系列类的实例，可以用于<u>动态存放多个对象</u>。</li>
+<li>Java集合框架提供了一套性能优良、使用方便的接口和类，它们位于java.util包中</li>
+<li>特点：长度不固定，只能存储引用类型对象</li>
+</ul>
+<p><strong>Java集合框架</strong></p>
+<ul>
+<li>List 接口存储一组不唯一(可重复)，有序（插入顺序）的对象</li>
+<li>Set 接口存储一组唯一(不可重复)的对象 </li>
+<li>Map接口存储一组键值对象，提供key到value的映射</li>
+</ul>
+<p>Collection接口</p>
+<ul>
+<li>Collection接口中定义了一些集合常用方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int size();</td>
+<td>返回此collection中的元素数</td>
+</tr>
+<tr>
+<td>boolean isEmpty();</td>
+<td>判断此collection中是否包含元素。</td>
+</tr>
+<tr>
+<td>boolean contains(Object obj);</td>
+<td>判断此collection是否包含指定的元素。</td>
+</tr>
+<tr>
+<td>boolean add(Object element);</td>
+<td>向此collection中添加元素。</td>
+</tr>
+<tr>
+<td>boolean remove(Object element);</td>
+<td>从此collection中移除指定的元素。</td>
+</tr>
+<tr>
+<td>void clear();</td>
+<td>移除些collection中所有的元素。</td>
+</tr>
+<tr>
+<td>Iterator iterator();</td>
+<td>返回在此collection的元素上进行迭代的迭代器</td>
+</tr>
+<tr>
+<td>Object[] toArray();</td>
+<td>把此collection转成数组。</td>
+</tr>
+</tbody>
+</table>
+<p>存储特点：</p>
+<ul>
+<li>Collection接口－定义了存取对象的方法。两个常用的子接口：<ul>
+<li>List接口：存放的元素有序且允许有重复的集合接口。</li>
+<li>Set接口：存放的元素不包含重复元素的集合接口。</li>
+</ul>
+</li>
+</ul>
+<h2 id="二、List集合及其实现类"><a href="#二、List集合及其实现类" class="headerlink" title="二、List集合及其实现类"></a>二、List集合及其实现类</h2><p>List接口是Collection接口的子接口</p>
+<p>​    实现List接口的集合类中的元素是有序的，且允许重复。</p>
+<p>List集合中的元素都对应一个整数型的序号记载其在集合中的位置，可以根据序号存取集合中的元素。</p>
+<p>JDK API所提供的List集合类常用的有</p>
+<ul>
+<li><code>ArrayList</code></li>
+<li><code>LinkedList</code></li>
+</ul>
+<p>List接口比Collection接口中新增的几个实用方法：</p>
+<ul>
+<li><code>public Object get(int index);</code>返回列表中的元素数</li>
+<li><code>public Object add(int index, Object element);</code>在列表的指定位置插入指定元素.将当前处于该位置的元素（如果有的话）和所有后续元素向右移动</li>
+<li><code>public Object set(int index, Object element) ;</code>用指定元素替换列表中指定位置的元素</li>
+<li><code>public Object remove(int index);</code>移除列表中指定位置的元素</li>
+<li><code>public ListIterator listIterator();</code>返回此列表元素的列表迭代器</li>
+</ul>
+<p>实现类——ArrayList</p>
+<p>​    ArrayList是使用数组结构实现的List集合。</p>
+<ul>
+<li>优点：对于使用索引取出元素有较好的效率它使用索引来快速定位对象</li>
+<li>缺点：元素做删除或插入速度较慢因为使用了数组，需要移动后面的元素以调整索引顺序。</li>
+</ul>
+<p>实现类——LinkedList</p>
+<p>​    LinkedList是使用双向链表实现的集合。</p>
+<p>​    LinkedList新增了一些插入、删除的方法。    </p>
+<ul>
+<li>优点：对频繁的插入或删除元素有较好的效率</li>
+<li>缺点：查询元素时，效率低，因为要从第一个元素查找。</li>
+</ul>
+<h2 id="三、迭代器的使用"><a href="#三、迭代器的使用" class="headerlink" title="三、迭代器的使用"></a>三、迭代器的使用</h2><p>Iterator是专门的迭代输出接口。所谓的迭代输出就是将元素进行判断，判断是否有内容，如果有内容则把内容取出。</p>
+<p>Iterator对象称作迭代器，用以方便的实现对集合内元素的遍历操作。</p>
+<p>所有实现了Collection接口的集合类都有一个iterator()方法用以返回一个实现了Iterator接口的对象。</p>
+<p>​    <code>Iterator it = coll.iterator();</code></p>
+<p>​    <code>while(it.hasNext()){</code>      </p>
+<p>​        <code>it.next();</code></p>
+<p>​    <code>}</code></p>
+<p>迭代器的使用方法</p>
+<p>Iterator接口中定义了如下方法：</p>
+<ul>
+<li><code>boolean hasNext();</code> //判断游标右边是否有元素</li>
+<li><code>Object next();</code>//返回游标右边的元素并将游标移动到下一个位置</li>
+</ul>
+<p>另一种遍历集合的方法：用增强for遍历集合中的元素</p>
+<p>凡是能用 Iterator 迭代的集合都可以用JDK5.0中增强的for循环来更简便的遍历。</p>
+<p><code>List&lt;String&gt; list=new ArrayList&lt;String&gt;();</code>  </p>
+<p>…</p>
+<p>eg: <code>for(String data:list){</code>          </p>
+<p> <code>System.out.print(data+&quot;  &quot;)</code>     </p>
+<p><code>}</code></p>
+<h3 id="泛型补充"><a href="#泛型补充" class="headerlink" title="泛型补充"></a>泛型补充</h3><ul>
+<li><strong>泛型（Generic  type）</strong>是对 Java 语言的类型系统的一种扩展，以支持创建可以按类型进行参数化的类。可以把类型参数看作是使用参数化类型时指定的类型的一个占位符，就像方法的形式参数是运行时传递的值的占位符一样。</li>
+<li>泛型的好处：解决了类型安全的问题(运行期出现<code>&quot;java.lang.ClassCastException&quot;</code>异常)</li>
+<li>泛型类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Gen</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> T ob; <span class="comment">// 定义泛型成员变量</span></span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Gen</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">getOb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setOb</span><span class="params">(T ob)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ob = ob;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showType</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"T的实际类型是: "</span> + ob.getClass().getName());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>受限泛型</p>
+<ol>
+<li>设置上限     <ul>
+<li>类名称&lt;? extends 上限类&gt;       </li>
+<li>只能接收上限类对象或其子类对象</li>
+</ul>
+</li>
+<li>设置下限<ul>
+<li>类名称&lt;?  super  下限类&gt;      </li>
+<li>接收下限类对象或其父类对象</li>
+</ul>
+</li>
+</ol>
+<p><strong>注意：若定义泛型类，可以将?设置为泛型标识。</strong></p>
+</li>
+</ul>
+<h2 id="四、Set接口的实现类"><a href="#四、Set接口的实现类" class="headerlink" title="四、Set接口的实现类"></a>四、Set接口的实现类</h2><ul>
+<li>Set接口没有提供Collection接口额外的方法，但实现Set接口的集合类中的元素是不可重复的。</li>
+<li>JDK API中所提供的Set集合类常用的有：<ul>
+<li>HashSet：散列存放</li>
+<li>TreeSet：有序存放</li>
+<li>LinkedHashSet</li>
+</ul>
+</li>
+<li>HashSet的存储原理<ul>
+<li>根据每个对象的哈希码值(调用hashCode()获得)用固定的算法算出它的存储索引，把对象存放在一个叫散列表的相应位置(表元)中：<ul>
+<li>如果对应的位置没有其它元素，就只需要直接存入。</li>
+<li>如果该位置有元素了，会将新对象跟该位置的所有对象进行比较(调用equals())，以查看是否已经存在了：还不存在就存放，已经存在就不存储。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HashSet集合的特点及使用技巧<ul>
+<li>HashSet<strong>不保存元素的加入顺序</strong>。</li>
+<li>HashSet接口存、取、删对象都有很高的效率。</li>
+<li><strong>对于要存放到<code>HashSet</code>集合中的对象，对应的类可以重写<code>hashCode(Object obj)</code>方法和<code>equals()</code></strong>以实现对象相等规则的编写。</li>
+</ul>
+</li>
+<li>Treeset集合的特点：<ul>
+<li>可以对加入其中的元素进行排序。但前    提是，必须指定排序规则。</li>
+<li>构造方法： <code>public TreeSet()</code></li>
+<li>如果使用TreeSet的无参构造实例化TreeSet集合，则加入到TreeSet集合中的元素所对应的类必须实现<code>java.lang. Comparable&lt;T&gt;</code>接口，复写其中的<code>int compareTo(T o)</code>方法，并在方法中编写排序规则。</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
