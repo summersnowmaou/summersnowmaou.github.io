@@ -7,7 +7,7 @@
     
 
     <title>
-      Statement和PreparedStatement | Koguma&#39;s Blog 
+      Statement和PreparedStatement的区别和性能 | Koguma&#39;s Blog 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,18 +16,18 @@
     
     
 
-    <meta name="description" content="Statement和PreparedStatement的区别和性能 创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sq">
+    <meta name="description" content="创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sql); ResultSet pSet = preStatement">
 <meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Statement和PreparedStatement | Koguma&#39;s Blog">
+<meta property="og:title" content="Statement和PreparedStatement的区别和性能 | Koguma&#39;s Blog">
 <meta property="og:url" content="https://summersnowmaou.github.io/2018/05/08/Statement和PreparedStatement/index.html">
 <meta property="og:site_name" content="Koguma&#39;s Blog">
-<meta property="og:description" content="Statement和PreparedStatement的区别和性能 创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sq">
+<meta property="og:description" content="创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sql); ResultSet pSet = preStatement">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2018-05-08T14:38:19.627Z">
+<meta property="og:updated_time" content="2018-05-10T15:50:01.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Statement和PreparedStatement | Koguma&#39;s Blog">
-<meta name="twitter:description" content="Statement和PreparedStatement的区别和性能 创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sq">
+<meta name="twitter:title" content="Statement和PreparedStatement的区别和性能 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="创建时的区别：  Statement statement = conn.createStatement(); PreparedStatement preStatement = conn.prepareStatement(sql); 执行的的区别： ResultSet rSet = statement.executeQuery(sql); ResultSet pSet = preStatement">
     
     
     
@@ -190,7 +190,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">Statement和PreparedStatement</h1>
+    <h1 class="post-title">Statement和PreparedStatement的区别和性能</h1>
 
     
 
@@ -216,7 +216,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h1 id="Statement和PreparedStatement的区别和性能"><a href="#Statement和PreparedStatement的区别和性能" class="headerlink" title="Statement和PreparedStatement的区别和性能"></a>Statement和PreparedStatement的区别和性能</h1><ol>
+    <ol>
 <li><p>创建时的区别：</p>
 <p> <code>Statement statement = conn.createStatement();</code></p>
 <p><code>PreparedStatement preStatement = conn.prepareStatement(sql);</code></p>
