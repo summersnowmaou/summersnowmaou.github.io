@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      常用类 正则及枚举 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="一、常用类 Math类  Math 类提供了一序列基本数学运算和几何函数的方法。 Math类是final类，并且它的所有成员变量和成员方法都是静态的。  Math类的常用属性和方法    静态常量－－PI ：圆周率的double值 静态方法     double pow (double a, double b) 计算 a 的 b 次方     double sqrt  (double a) 计算给">
+<meta name="keywords" content="Object  regex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用类 正则及枚举 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2018/01/03/常用类-正则及枚举/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="一、常用类 Math类  Math 类提供了一序列基本数学运算和几何函数的方法。 Math类是final类，并且它的所有成员变量和成员方法都是静态的。  Math类的常用属性和方法    静态常量－－PI ：圆周率的double值 静态方法     double pow (double a, double b) 计算 a 的 b 次方     double sqrt  (double a) 计算给">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-05-12T16:08:19.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用类 正则及枚举 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="一、常用类 Math类  Math 类提供了一序列基本数学运算和几何函数的方法。 Math类是final类，并且它的所有成员变量和成员方法都是静态的。  Math类的常用属性和方法    静态常量－－PI ：圆周率的double值 静态方法     double pow (double a, double b) 计算 a 的 b 次方     double sqrt  (double a) 计算给">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">常用类 正则及枚举</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-01-03" class="post-meta__date date">2018-01-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Object-regex/">Object  regex</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="一、常用类"><a href="#一、常用类" class="headerlink" title="一、常用类"></a>一、常用类</h2><ol>
+<li><p>Math类</p>
+<ol>
+<li>Math 类提供了一序列基本数学运算和几何函数的方法。</li>
+<li>Math类是final类，并且它的所有成员变量和成员方法都是静态的。</li>
+</ol>
+<p><strong>Math类的常用属性和方法</strong></p>
+</li>
+</ol>
+<ul>
+<li>静态常量－－PI ：圆周率的double值</li>
+<li>静态方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>double pow (double a, double b)</th>
+<th>计算 a 的 b 次方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>double sqrt  (double a)</td>
+<td>计算给定值的平方根</td>
+</tr>
+<tr>
+<td>int abs (int a)</td>
+<td>计算 int 类型值 a的绝对值，也接收 long、float 和 double 类型的参数</td>
+</tr>
+<tr>
+<td>double ceil (double a)</td>
+<td>返回大于等于 a的最小整数的double值</td>
+</tr>
+<tr>
+<td>double floor (double a)</td>
+<td>返回小于等于 a的最大整数的double值</td>
+</tr>
+<tr>
+<td>int max(int a, int b)</td>
+<td>返回 int 型值 a 和 b 中的较大值，也接收 long、float 和 double 类型的参数</td>
+</tr>
+<tr>
+<td>int min(int a, int b)</td>
+<td>返回 a 和 b 中的较小值，也可接收 long、float 和 double 类型的参数</td>
+</tr>
+<tr>
+<td>int round(float a);</td>
+<td>四舍五入返回整数</td>
+</tr>
+<tr>
+<td>double random()</td>
+<td>返回带正号的double值，该值大于等于0.0且小于1.0</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><p>Random类</p>
+<ul>
+<li>Random类的对象可以生成“伪随机数”。</li>
+<li>常用方法：      <code>public int nextInt(int   bound)</code></li>
+<li>返回从0(包含)到bound(不包含)的一个“伪随机”   整数值。</li>
+<li><code>public boolean nextBoolean()</code>     返回一个“伪随机”的boolean值</li>
+</ul>
+</li>
+<li><p>System类</p>
+<ol>
+<li>成员变量<ul>
+<li>System类内部包含in、out和err三个成员变量，分别代表标准输入流(键盘输入)，标准输出流(显示器)和标准错误输出流(显示器)。</li>
+</ul>
+</li>
+<li>成员方法<ul>
+<li><code>public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</code></li>
+<li><code>int[] a = {1,2,3,4};</code></li>
+<li><code>int[] b = new int[5];</code></li>
+<li><code>System.arraycopy(a,1,b,3,2);</code></li>
+</ul>
+</li>
+<li>exit()方法<ul>
+<li><code>public static void exit(int status)</code></li>
+<li>该方法的作用是退出程序。其中status的值为0代表正常退出，非零代表异常退出。使用该方法可以在图形界面编程中实现程序的退出功能等。</li>
+</ul>
+</li>
+<li>gc()方法<ul>
+<li><code>public static void gc()</code></li>
+<li>该方法的作用是请求系统进行垃圾回收。至于系统是否立刻回收，则取决于系统中垃圾回收算法的实现以及系统执行时的情况。</li>
+<li>垃圾回收时，会先调用finalize()方法，释放非java资源\</li>
+</ul>
+</li>
+<li>currentTimeMillis方法<ul>
+<li><code>public static long currentTimeMillis()</code></li>
+<li>以毫秒为单位返回从1970年1月1日午夜到当前时间的毫秒数</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Runtime类</p>
+<ul>
+<li>作用：使应用程序与其运行的环境相关联通过使用getRuntime()静态方法获得实例。</li>
+<li>exec(String command)在单独的进程中执行指定的字符串命令，该方法返回Process对象，使用Process对象的destroy()方法可以杀掉进程</li>
+</ul>
+</li>
+<li><p>Date类与SimpleDateFormat类</p>
+<ul>
+<li>Date类：表示日期和时间<ul>
+<li>提供操作日期和时间各组成部分的方法</li>
+</ul>
+</li>
+<li>SimpleDateFormat类<ul>
+<li>用于定制日期时间的格式</li>
+</ul>
+</li>
+<li><code>Date date = new Date();</code>    //创建日期对象  </li>
+<li><code>SimpleDateFormat sdf= new SimpleDateFormat(&quot;yyyy-      MM-dd HH:mm:ss&quot;);</code>//定制日期格式</li>
+<li><code>String now = sdf.format(date);</code></li>
+<li><code>System.out.println(now);</code></li>
+</ul>
+</li>
+<li><p>Calendar类</p>
+<ul>
+<li><p>抽象类</p>
+</li>
+<li><p>用于设置和获取日期/时间数据的特定部分</p>
+</li>
+<li><p>Calendar类提供一些方法和静态字段来操作日历</p>
+<p>| 方法或属性              | 说明         |<br>| —————— | ———- |<br>| int get(int field) | 返回给定日历字段的值 |<br>| MONTH              | 指示月        |<br>| DAY_OF_MONTH       | 指示一个月中的某天  |<br>| DAY_OF_WEEK        | 指示一个星期中的某天 |</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="二、正则表达式"><a href="#二、正则表达式" class="headerlink" title="二、正则表达式"></a>二、正则表达式</h2><p>正则表达式(regex)是使用字符串来描述、匹配一系列符合某个句法规则的字符串</p>
+<p>用途：匹配、切割、替换、获取字符串</p>
+<p>正则表达式由一些普通字符和一些元字符组成。常见元字符</p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结束位置</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配一个数字字符。等价于<code>[0-9]</code></td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配一个非数字字符。等价于<code>[^0-9]</code></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任何空白字符，包括空格、制表符、换页符等等。等价于<code>[ \n\r\t\f]</code></td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任何非空白字符。等价于<code>[^\n\r\t\f]</code></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>匹配包括下划线的任何单个字符。等价于<code>&quot;[A-Za-z0-9_]&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>常见元字符</p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\W</td>
+<td>匹配任何非单个字符。等价于<code>“[^A-Za-z0-9_]”</code></td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除“\r\n”之外的任何单个字符</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n是一个非负整数。匹配确定的n次</td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n是一个非负整数。至少匹配n次</td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次(大于等于0次)</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次(大于等于1次）</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>在Java中反斜线”\”有三种含义：</strong></u></p>
+<ol>
+<li><p>反斜线后面可以加特定字符，组成所谓的“转义字符”。eg:  \n    \t  </p>
+</li>
+<li><p>用于取消元字符的意义，使元字符变为普通字符。eg:  “\” 代表”\”。</p>
+</li>
+<li><p>用于组成正则表达式中的元字符。</p>
+<p>eg:  “\d” 在正则表达式中代表“匹配一个数字字符”。</p>
+</li>
+</ol>
+<p>String类对正则表达式的支持</p>
+<ol>
+<li><code>public boolean matches(String regex)</code>     判断字符串是否与给定的正则表达式匹配。</li>
+<li><code>public String replaceAll(String regex,String replacement)</code>  字符串替换</li>
+<li><code>public String[] split(String regex)</code>字符串拆分</li>
+</ol>
+<p>正则表达式中的问号?有两种作用：</p>
+<ol>
+<li>重复前面表达式0次或1次。</li>
+<li>在表示次数的元字符后加上?代表取消默认的贪婪匹配模式，变为“非贪婪匹配模式”。</li>
+</ol>
+<h2 id="三、Pattern类与Matcher类"><a href="#三、Pattern类与Matcher类" class="headerlink" title="三、Pattern类与Matcher类"></a>三、Pattern类与Matcher类</h2><ol>
+<li>Pattern类与Matcher类都在java.util.regex包    中定义。</li>
+<li>Pattern类的对象代表正则表达式编译之后的对象；Matcher类主要用于执行验证。</li>
+<li>Pattern类的主要方法：<ul>
+<li><code>public static Pattern compile(String regex);</code>       </li>
+<li><code>public Matcher matcher(CharSequence input);</code></li>
+</ul>
+</li>
+<li>Matcher类的主要方法：<ul>
+<li><code>public boolean matches();</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="四、枚举类型"><a href="#四、枚举类型" class="headerlink" title="四、枚举类型"></a>四、枚举类型</h2><ol>
+<li><p>枚举类型使用一组常量值来表示特定的数据集合，该集合中数据的数目确定（通常较少），且这些数据只能取预先定义的值。</p>
+</li>
+<li><p>Java枚举类型均自动继承java.lang.Enum类（该类继承了Object类）。</p>
+</li>
+<li><p>声明枚举类型：</p>
+<p><code>[public] enum 枚举类型名称{</code>    </p>
+<p>​    <code>枚举对象1,枚举对象2,…,枚举对象n;</code></p>
+<p><code>}</code></p>
+<p>eg:  <code>public enum Color{</code>     </p>
+<p><code>RED,GREEN,BLUE;</code></p>
+<p><code>}</code></p>
+</li>
+<li><p>获取枚举对象的两种方法：</p>
+<ol>
+<li>取得单个枚举对象                枚举.对象名</li>
+<li>取得全部枚举对象                枚举.values()</li>
+</ol>
+<p><strong>注意：枚举.values()返回的是一个对象数组，  可以通过遍历该对象数组获取所有枚举对象。</strong></p>
+<p>​</p>
+</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
