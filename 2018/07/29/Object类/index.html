@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Object类 | Koguma&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Koguma">
+    
+    
+
+    <meta name="description" content="一、clone()方法原型：protected native Object clone() 异常类型：CloneNotSupportedException 自己理解：创建并返回此对象的一个副本。 以下为JDK1.8中的部分注释的翻译： ​    首先对于任何对象 x 都有 x.clone() !=x 为true，且 x.clone().getClass() ==x.getClass()为true，">
+<meta name="keywords" content="JDK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object类 | Koguma&#39;s Blog">
+<meta property="og:url" content="https://summersnowmaou.github.io/2018/07/29/Object类/index.html">
+<meta property="og:site_name" content="Koguma&#39;s Blog">
+<meta property="og:description" content="一、clone()方法原型：protected native Object clone() 异常类型：CloneNotSupportedException 自己理解：创建并返回此对象的一个副本。 以下为JDK1.8中的部分注释的翻译： ​    首先对于任何对象 x 都有 x.clone() !=x 为true，且 x.clone().getClass() ==x.getClass()为true，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:updated_time" content="2018-07-29T14:51:47.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Object类 | Koguma&#39;s Blog">
+<meta name="twitter:description" content="一、clone()方法原型：protected native Object clone() 异常类型：CloneNotSupportedException 自己理解：创建并返回此对象的一个副本。 以下为JDK1.8中的部分注释的翻译： ​    首先对于任何对象 x 都有 x.clone() !=x 为true，且 x.clone().getClass() ==x.getClass()为true，">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Koguma&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/summersnowmaou" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Object类</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-07-29" class="post-meta__date date">2018-07-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JDK/">JDK</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="一、clone"><a href="#一、clone" class="headerlink" title="一、clone()"></a>一、clone()</h2><p>方法原型：<code>protected native Object clone()</code></p>
+<p>异常类型：<code>CloneNotSupportedException</code></p>
+<p>自己理解：创建并返回此对象的一个副本。</p>
+<p>以下为JDK1.8中的部分注释的翻译：</p>
+<p>​    首先对于任何对象 x 都有 x.clone() !=x 为true，且 x.clone().getClass() ==x.getClass()为true，还有一种情况是 x.clone().equals(x) 为true。</p>
+<p>​    此方法返回的对象应该通过调用super.clone来获得，如果一个类和他的超类（除了Object）都遵守这个约定就能得到x.clone().getClass() ==x.getClass()。</p>
+<p>​    按照惯例，此方法返回的对象应独立于此对象（正在克隆的对象）。要实现此独立性，可能需要在返回之前修改 super.clone 返回的对象的一个或多个字段。通常，这意味着复制包含被克隆对象的内部“深层结构”的任何可变对象，并使用对副本的引用替换对这些对象的引用。如果一个类只包含原始字段或对不可变对象的引用，那么通常情况下， super.clone 返回的对象中的任何字段都不需要修改。</p>
+<p>​    类 Object的方法 clone 执行特定的克隆操作。首先，如果此对象的类未实现接口 Cloneable，则抛出 CloneNotSupportedException 。请注意，所有数组都被认为是实现接口 Cloneable ，并且数组类型 T [] 的 clone 方法的返回类型是 T []，其中T是任何参考或原始类型。否则，此方法创建此对象的类的新实例，并使用该对象的相应字段的内容初始化其所有字段，就像通过赋值一样;这些字段的内容本身不会被克隆。因此，该方法执行该对象的“浅拷贝”，而不是“深拷贝”操作。<br>    类 Object本身并不实现接口 Cloneable ，因此在类为 Object的对象上调用 clone方法将导致在运行时抛出异常。</p>
+<p><strong>综上所述：</strong></p>
+<p>自定义类实现clone的步骤：</p>
+<ol>
+<li>自定义类实现Cloneable接口</li>
+<li>自定义类中重写Object类的clone()方法</li>
+<li>重写clone()方法时通过super.clone()调用Object类的clone()方法来得到该对象的副本,并返回该副本</li>
+</ol>
+<p>数组不需要实现Cloneable接口，且此方法本身是浅拷贝操作。</p>
+<h2 id="二、hashCode"><a href="#二、hashCode" class="headerlink" title="二、hashCode()"></a>二、hashCode()</h2><p>方法原型：<code>public int hashCode()</code></p>
+<p>自己理解：返回对象的哈希码值，哈希码值是通过哈希表(Hashtable)里面的哈希算法算出来的,可以理解为逻辑地址值(整数) </p>
+<h2 id="三、getClass"><a href="#三、getClass" class="headerlink" title="三、getClass()"></a>三、getClass()</h2><p>方法原型：<code>public final native Class&lt;?&gt; getClass();</code></p>
+<p>自己理解：返回此 Object的运行时类。 返回的 Class对象是由所表示的类的 static synchronized方法锁定的对象，因为是Class对象，所以也可以使用Class类中的方法(getName())。</p>
+<p>JDK1.8中的部分注释的翻译：</p>
+<p>​    实际结果类型是{@code Class &lt;？ extends | X |&gt;}其中{@code | X |}是调用{@code getClass}的表达式的静态类型的擦除。</p>
+<h2 id="四、toString"><a href="#四、toString" class="headerlink" title="四、toString()"></a>四、toString()</h2><p>方法原型：<code>public String toString()</code></p>
+<p>返回值：<code>return getClass().getName() + &quot;@&quot; + Integer.toHexString(hashCode());}</code></p>
+<p><code>Integer.toHexString(hashCode())</code>:返回一个整数的16进制数  </p>
+<p>默认情况下,该方法返回值没有意义,一般重写该方法.</p>
+<h2 id="五、equals"><a href="#五、equals" class="headerlink" title="五、equals()"></a>五、equals()</h2><p>方法原型：<code>public boolean equals(Object obj)</code></p>
+<p>返回值：<code>return (this == obj);</code></p>
+<p>所以我们可以得知该方法用来判断其他某个对象是否与此对象相等(默认比较地址值),由于比较对象的引用没有意义,一般建议重写该方法. </p>
+<h2 id="六、finalize"><a href="#六、finalize" class="headerlink" title="六、finalize()"></a>六、finalize()</h2><p>方法原型：<code>protected void finalize() throws Throwable { }</code></p>
+<p>自己理解：:当垃圾回收器确定不存在对该对象的更多引用时,由对象的垃圾回收器调用此方法(主要针对堆内存) .</p>
+<p>​    Java编程语言不保证哪个线程将为任何给定对象调用{@code finalize}方法。但是，可以保证，调用finalize时，调用finalize的线程不会持有任何用户可见的同步锁。如果finalize方法抛出未捕获的异常，则忽略该异常并终止该对象的终止。</p>
+<p>​    在为对象调用{@code finalize}方法之后，在Java虚拟机再次确定不再有任何方法可以通过任何尚未死亡的线程访问此对象之前，不会采取进一步操作，包括准备最终确定的其他对象或类的可能动作，此时可以丢弃该对象。</p>
+<p>​    对于任何给定对象，Java虚拟机永远不会多次调用{@code finalize}方法。</p>
+<p>​    {@code finalize}方法抛出的任何异常都会导致暂停此对象的终结，但会被忽略。    </p>
+<p>​    类{@code Object}的{@code finalize}方法不执行任何特殊操作;它只是正常返回。 {@code Object}的子类可以覆盖此定义。</p>
+<h2 id="七、notify"><a href="#七、notify" class="headerlink" title="七、notify ()"></a>七、notify ()</h2><p>方法原型：<code>public final native void notify();</code></p>
+<p>异常类型：<code>IllegalMonitorStateException</code></p>
+<p>理解：唤醒在此对象监视器上等待的单个线程 。</p>
+<p>JDK1.8的注释：</p>
+<p>​    如果所有线程都在此对象上等待，则会选择唤醒其中一个线程。选择是任意性的，并在对实现做出决定时发生。线程通过调用其中一个 wait 方法，在对象的监视器上等待。 </p>
+<p>​    直到当前的线程放弃此对象上的锁定，才能继续执行被唤醒的线程。被唤醒的线程将以常规方式与在该对象上主动同步的其他所有线程进行竞争 。</p>
+<p>​    通过以下三种方法之一，线程可以成为此对象监视器的所有者：通过执行此对象的同步 (Sychronized) 实例方法。通过执行在此对象上进行同步的 synchronized 语句的正文。对于 Class 类型的对象，可以通过执行该类的同步静态方法。 </p>
+<p>​    一次只能有一个线程拥有对象的监视器。 抛出：IllegalMonitorStateException  如果当前的线程不是此对象监视器的所有者。 </p>
+<h2 id="八、notifyAll"><a href="#八、notifyAll" class="headerlink" title="八、notifyAll()"></a>八、notifyAll()</h2><p>方法原型：<code>public final native void notifyAll();</code></p>
+<p>异常类型：<code>IllegalMonitorStateException</code></p>
+<p>理解：唤醒在此对象监视器上等待的所有线程 </p>
+<p>线程通过调用其中一个 wait 方法，在对象的监视器上等待。直到当前的线程放弃此对象上的锁定，才能继续执行被唤醒的线程。被唤醒的线程将以常规方式与在该对象上主动同步的其他所有线程进行竞争；例如，唤醒的线程在作为锁定此对象的下一个线程方面没有可靠的特权或劣势。此方法只应由作为此对象监视器的所有者的线程来调用。 </p>
+<h2 id="九、wait-重载"><a href="#九、wait-重载" class="headerlink" title="九、wait() (重载)"></a>九、wait() (重载)</h2><p>方法原型：<code>public final native void wait(long timeout) throws InterruptedException;</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout, <span class="keyword">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (timeout &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"timeout value is negative"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nanos &lt; <span class="number">0</span> || nanos &gt; <span class="number">999999</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</span><br><span class="line">                                <span class="string">"nanosecond timeout value out of range"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nanos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            timeout++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        wait(timeout);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        wait(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>​    wait(long timeout)导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，或者超过指定的时间量。当前的线程必须拥有此对象监视器。此方法导致当前线程（称之为 T）将其自身放置在对象的等待集中，然后放弃此对象上的所有同步要求。 </p>
+<p>​    出于线程调度目的，线程 T 被禁用，且处于休眠状态，直到发生以下四种情况之一：其他某个线程调用此对象的 notify 方法，并且线程 T 碰巧被任选为被唤醒的线程。其他某个线程调用此对象的 notifyAll 方法。其他某个线程中断线程 T。已经到达指定的实际时间。 </p>
+<p>​    如果 timeout 为零，则不考虑实际时间，该线程将一直等待，直到获得通知。然后，从对象的等待集中删除线程 T，并重新进行线程调度。然后，该线程以常规方式与其他线程竞争，以获得在该对象上同步的权利；一旦获得对该对象的控制权，该对象上的所有其同步声明都将被还原到以前的状态 - 这就是调用 wait 方法时的情况。然后，线程 T 从 wait 方法的调用中返回。所以，从 wait 方法返回时，该对象和线程 T 的同步状态与调用 wait 方法时的情况完全相同。 </p>
+<p>​    在没有被通知、中断或超时的情况下，线程还可以唤醒一个所谓的虚假唤醒 (spurious wakeup)。虽然这种情况在实践中很少发生，但是应用程序必须通过以下方式防止其发生，即对应该导致该线程被提醒的条件进行测试，如果不满足该条件，则继续等待。换句话说，等待应总是发生在循环中 .</p>
+<p>​    <strong>注意，由于 wait 方法将当前的线程放入了对象的等待集中，所以它只能解除此对象的锁定；可以同步当前线程的任何其他对象在线程等待时仍处于锁定状态。此方法只应由作为此对象监视器的所有者的线程来调用。</strong> </p>
+<p>​    wait(long timeout, int nanos)方法类似于一个参数的 wait 方法，但它允许更好地控制在放弃之前等待通知的时间量。用毫微秒度量的实际时间量可以通过以下公式计算出来：1000000*timeout+nanos在其他所有方面，此方法执行的操作与带有一个参数的 wait(long) 方法相同。需要特别指出的是，wait(0, 0) 与 wait(0) 相同。 </p>
+<p>​    wait()导致当前的线程等待，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法。换句话说，此方法的行为就好像它仅执行 wait(0) 调用一样 。</p>
+<h2 id="一些疑问"><a href="#一些疑问" class="headerlink" title="一些疑问"></a>一些疑问</h2><p>wait() , notify() , notifyAll() , 这些用来操作线程的方法为什么定义在Object类中</p>
+<ol>
+<li>这些方法存在于同步中；</li>
+<li>使用这些方法必须标识同步所属的锁；</li>
+<li>锁可以是任意对象，所以任意对象调用方法一定定义在Object类中。</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
